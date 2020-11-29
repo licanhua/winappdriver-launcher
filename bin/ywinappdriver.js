@@ -3,6 +3,7 @@
 var fs = require('fs');
 var path = require('path');
 const { spawn } = require('child_process');
+const { dirname } = require('path');
 
 var winappdriver = undefined;
 var packagePath = undefined;
@@ -28,11 +29,8 @@ fs.access(winappdriver, fs.constants.F_OK, (err) => {
         }
         process.stdin.on('data', process.exit.bind(process, 0));
         var args = process.argv.slice(2);
-        if (args.length == 0)
-        {
-            args = ['--urls', 'http://127.0.0.1:4723']
-        }
-        const child = spawn(winappdriver, args);
+        const dir = dirname(winappdriver)
+        const child = spawn(winappdriver, args, {cwd: dir});
 
         child.stdout.on('data', (data) => {
         console.log(`${data}`);
