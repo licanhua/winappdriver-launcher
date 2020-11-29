@@ -27,8 +27,12 @@ fs.access(winappdriver, fs.constants.F_OK, (err) => {
             process.stdin.resume();
         }
         process.stdin.on('data', process.exit.bind(process, 0));
-
-        const child = spawn(winappdriver, process.argv.slice(2));
+        var args = process.argv.slice(2);
+        if (args.length == 0)
+        {
+            args = ['--urls', 'http://127.0.0.1:4723']
+        }
+        const child = spawn(winappdriver, args);
 
         child.stdout.on('data', (data) => {
         console.log(`${data}`);

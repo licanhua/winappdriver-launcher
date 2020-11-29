@@ -1,6 +1,6 @@
 {
   "name": "winappdriver",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A wrapper to Launch WinAppDriver or YWinAppDriver",
   "main": "index.js",
   "repository": {
@@ -21,5 +21,7 @@
     "ywinappdriver": "bin/ywinappdriver.js"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "wdio-ywinappdriver-service": "^0.2.53"
+  }
 }
