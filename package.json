@@ -1,0 +1,25 @@
+{
+  "name": "winappdriver",
+  "version": "0.0.2",
+  "description": "A wrapper to Launch WinAppDriver or YWinAppDriver",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/licanhua/winappdriver-launcher.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Canhua Li",
+  "publisher": "",
+  "license": "MIT",
+  "keywords": [
+    "WinAppDriver"
+  ],
+  "bin": {
+    "winappdriver": "bin/winappdriver.js",
+    "ywinappdriver": "bin/ywinappdriver.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
