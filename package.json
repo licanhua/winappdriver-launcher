@@ -1,14 +1,15 @@
 {
   "name": "winappdriver",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A wrapper to Launch WinAppDriver or YWinAppDriver",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/licanhua/winappdriver-launcher.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublishOnly": "npm run prettier && tsc",
+    "prettier": "prettier --write */*.ts"
   },
   "author": "Canhua Li",
   "publisher": "",
@@ -17,11 +18,14 @@
     "WinAppDriver"
   ],
   "bin": {
-    "winappdriver": "bin/winappdriver.js",
-    "ywinappdriver": "bin/ywinappdriver.js"
+    "winappdriver": "dist/winappdriver.js",
+    "ywinappdriver": "dist/ywinappdriver.js"
   },
   "dependencies": {},
   "devDependencies": {
+    "@types/node": "^14.14.10",
+    "prettier": "2.2.1",
+    "typescript": "^4.1.2",
     "wdio-ywinappdriver-service": "^0.2.53"
   }
 }

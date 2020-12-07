@@ -3,3 +3,4 @@ src
 tsconfig.json
 .git*
 node_modules/
+src/
